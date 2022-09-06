@@ -8,4 +8,6 @@
 void display(const vector<int>& vec);
 void visDisp(const vector<int>& vec);
 void clearScreen(const int& numChar);
-void sort(vector<int>& graphToSort);
+void bubbleSort(vector<int>& graphToSort);
+void selectionSort(vector<int>& graphToSort);
+void menu();

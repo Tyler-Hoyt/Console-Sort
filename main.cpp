@@ -10,20 +10,30 @@ int main()
 {
     vector<int> vec;
 
-    int a;
+    int a, b;
 
+    menu();
+    cin >> b;
+    
     cout << "Create a vector (n to stop): ";
     cin >> a;
 
     while(cin)
-    {
-        vec.push_back(a);
-        cin >> a;
-    }
+      {
+	vec.push_back(a);
+	cin >> a;
+      }
 
     system("clear");
 
-    sort(vec);
-
-    visDisp(vec);  
+    switch(b)
+	     {
+      case 0:
+	bubbleSort(vec);
+	break;
+      case 1:
+	selectionSort(vec);
+	break;
+      }
+    visDisp(vec);
 }

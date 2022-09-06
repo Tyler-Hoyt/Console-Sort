@@ -27,7 +27,7 @@ void visDisp(const vector<int>& vec)
 }
 
 //Bubble sort method for the vectors
-void sort(vector<int>& graphToSort)
+void bubbleSort(vector<int>& graphToSort)
 {
     int n = graphToSort.size();
 
@@ -55,4 +55,44 @@ void sort(vector<int>& graphToSort)
             }
         }
     }
+}
+
+//Selection sort method for the vectors
+void selectionSort(vector<int>& graphToSort)
+{
+  int n = graphToSort.size();
+
+  int i, j, min, min_index;
+
+  visDisp(graphToSort);
+
+  sleep(1);
+
+  system("clear");
+
+  for(i = 0; i < n; i++)
+    {
+      min = graphToSort[i];
+      min_index = i;
+      for(j = i + 1; j < n; j++)
+	  {
+	   if(graphToSort[j] < min)
+	     {
+	      min = graphToSort[j];
+	      min_index = j;
+	     }
+	  }
+      std::swap(graphToSort[i], graphToSort[min_index]);
+
+      visDisp(graphToSort);
+      sleep(1);
+      system("clear");
+    }
+}
+
+void menu()
+{
+  cout << "BubbleSort: 0" << endl;
+  cout << "SelectionSort: 1" << endl;
+  cout << "Choose a sorting method: " << endl;
 }
